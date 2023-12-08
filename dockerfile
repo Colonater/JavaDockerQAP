@@ -1,6 +1,5 @@
 FROM openjdk:17-jdk
 
-WORKDIR /app
 
 COPY target/JavaDockerQAP-1.0-SNAPSHOT.jar app.jar
 

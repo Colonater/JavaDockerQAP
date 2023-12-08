@@ -1,6 +1,8 @@
 package org.example.airport;
 
 
+import org.example.city.City;
+
 import javax.persistence.*;
 
 @Entity

@@ -1,12 +1,13 @@
 package org.example.aircraft;
 
-import jakarta.persistence.*;
+
+import org.example.airport.Airport;
+import org.hibernate.annotations.Entity;
 
 import javax.persistence.*;
 import java.util.List;
 
 @Entity
-
 public class Aircraft {
     @Id
     @SequenceGenerator(name = "aircraft_sequence", allocationSize = 1, initialValue = 1)
