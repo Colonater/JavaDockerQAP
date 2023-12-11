@@ -1,9 +1,21 @@
 version: '3'
 
 services:
-  JavaDockerQAP:
-    image: colonator/JavaDockerQAP
+  java_docker_qap:
+    build: .
+    image: java_docker_qap
     ports:
-      - 8080:8080
+      - "8080:8080"
     environment:
-      - SPRING_DATASOURCE_URL=jdbc:mysql://host.docker.internal:3306/JavaDockerQAP
+      - SPRING_DATASOURCE_URL=jdbc:mysql://db:3306/JavaDockerQap
+
+  db:
+    image: mysql:5.7
+    volumes:
+      - db_data:/var/lib/mysql
+    environment:
+      - MYSQL_ROOT_PASSWORD=password
+      - MYSQL_DATABASE=qap
+
+volumes:
+  db_data: {}
