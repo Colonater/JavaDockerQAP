@@ -1,9 +1,11 @@
 package org.example.airport;
 
 
+import org.example.aircraft.Aircraft;
 import org.example.city.City;
 
 import javax.persistence.*;
+import java.util.List;
 
 @Entity
 public class Airport {
@@ -13,6 +15,7 @@ public class Airport {
     private String name;
     private Long id;
     private String citycode;
+    private List<Aircraft> aircrafts;
 
     @OneToOne
     private City city;
@@ -44,6 +47,8 @@ public class Airport {
     public void setCity(City city) {
         this.city = city;
     }
+
+
 }
 
 

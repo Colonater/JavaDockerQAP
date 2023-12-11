@@ -6,24 +6,31 @@ import org.hibernate.annotations.Entity;
 
 import javax.persistence.*;
 import java.util.List;
-
+//@entity
 @Entity
 public class Aircraft {
     @Id
     @SequenceGenerator(name = "aircraft_sequence", allocationSize = 1, initialValue = 1)
     @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "aircraft_sequence")
-    private Long id;
+    private long id;
     private String callsign;
     private String model;
     private String serialNumber;
     private String make;
 
+    public String getName() {
+        String name = null;
+        return name;
+    }
+
+
     //@manytomany mutiple joins @onetomany one join table
     @ManyToMany
-    private List<Airport> airports;
+    private Airport airport;
     public long getId() {
         return id;
     }
+
 
     public void setId(long id) {
         this.id = id;
