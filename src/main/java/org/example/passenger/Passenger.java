@@ -1,10 +1,9 @@
 package org.example.passenger;
 
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
-import javax.persistence.SequenceGenerator;
+import org.example.airport.Airport;
+
+import javax.persistence.*;
 
 @Entity
 public class Passenger {
@@ -16,6 +15,7 @@ public class Passenger {
     private String lastName;
     private String email;
 
+    public Passenger() {
     public long getId() {
         return id;
     }
