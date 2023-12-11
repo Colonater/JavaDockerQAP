@@ -1,73 +1,46 @@
 package org.example.aircraft;
 
-
-import org.example.airport.Airport;
 import org.hibernate.annotations.Entity;
 
-import javax.persistence.*;
-import java.util.List;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.SequenceGenerator;
+
 //@entity
 @Entity
 public class Aircraft {
     @Id
     @SequenceGenerator(name = "aircraft_sequence", allocationSize = 1, initialValue = 1)
     @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "aircraft_sequence")
+
     private long id;
-    private String callsign;
-    private String model;
-    private String serialNumber;
-    private String make;
 
-    public String getName() {
-        String name = null;
-        return name;
-    }
+    private String code;
 
+    private String name;
 
-    //@manytomany mutiple joins @onetomany one join table
-    @ManyToMany
-    private Airport airport;
     public long getId() {
         return id;
     }
-
 
     public void setId(long id) {
         this.id = id;
     }
 
-    public String getCallsign() {
-        return callsign;
-    }
-    public void setCallsign(String callsign) {
-        this.callsign = callsign;
+    public String getCode() {
+        return code;
     }
 
-    public String getModel() {
-        return model;
+    public void setCode(String code) {
+        this.code = code;
     }
 
-    public void setModel(String model) {
-        this.model = model;
+    public String getName() {
+        return name;
     }
 
-
-    public String getSerialNumber() {
-        return serialNumber;
+    public void setName(String name) {
+        this.name = name;
     }
-
-
-    public void setSerialNumber(String serialNumber) {
-        this.serialNumber = serialNumber;
-    }
-
-
-    public String getMake() {
-        return make;
-    }
-
-    public void setMake(String make) {
-        this.make = make;
-    }
-
 }
