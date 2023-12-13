@@ -1,3 +1,5 @@
+//aircraft class responsible for saving aircraft info using javax
+
 package org.example.aircraft;
 
 import org.hibernate.annotations.Entity;
