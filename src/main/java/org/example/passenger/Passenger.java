@@ -1,3 +1,5 @@
+//passenger class
+
 package org.example.passenger;
 
 

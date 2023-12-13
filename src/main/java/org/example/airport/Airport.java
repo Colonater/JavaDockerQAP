@@ -1,3 +1,5 @@
+//airport class responible for saving airport info
+
 package org.example.airport;
 
 
